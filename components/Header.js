@@ -43,10 +43,14 @@ const StyledServices = styled.div`
 const Services = () => {
   return (
     <StyledServices>
-      <div className='left'>
-        <Logo className='logo' />
-        <div className='logo-text'>Sandwich.Studio</div>
-      </div>
+      <Link href='/'>
+        <a>
+          <div className='left'>
+            <Logo className='logo' />
+            <div className='logo-text'>Sandwich.Studio</div>
+          </div>
+        </a>
+      </Link>
       <div className='right'>
         <ul>
           <li>
