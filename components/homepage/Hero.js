@@ -14,6 +14,7 @@ const StyledHero = styled.div`
   flex-flow: column nowrap;
   justify-content: space-between;
   overflow: hidden;
+  position: relative;
 
   * {
     font-family: NeueMontrealRegular;
@@ -30,7 +31,7 @@ const StyledHero = styled.div`
   .top-line {
     justify-content: flex-end;
     p {
-      ${({ theme }) => theme.textStyles.h3};
+      ${({ theme }) => theme.textStyles.h4};
       width: 40%;
       text-align: right;
       &:first-letter {

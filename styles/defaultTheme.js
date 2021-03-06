@@ -8,6 +8,11 @@ theme.colors = {
 }
 
 theme.textStyles = {
+  headline: css`
+    font-family: NeueMontrealRegular;
+    font-size: 14vw;
+    letter-spacing: 0.01em;
+  `,
   h1: css`
     font-family: NeueMontrealRegular;
     font-size: 100px;

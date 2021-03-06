@@ -8,9 +8,9 @@ const StyledServices = styled.div`
     color: ${({ theme }) => theme.colors.text};
     ${({ theme }) => theme.textStyles.h6};
   }
+  z-index: 100;
   width: 100vw;
   height: 10vh;
-  border: thin solid black;
   position: fixed;
   top: 0;
   padding: 0 max(5vw, 50px);

@@ -168,11 +168,17 @@ export default createGlobalStyle`
       /* background : ${({ theme }) => theme.colors.background}; */
       /* color : ${({ theme }) => theme.colors.textStandard}; */
     }
-    html,
+
+    html {
+      /* overflow : hidden; */
+    }
     body {
       overflow-x: hidden;
       padding: 0;
       margin: 0;
       background : ${({ theme }) => theme.colors.background};
     }
+
+
+
 `
