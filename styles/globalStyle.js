@@ -1,16 +1,17 @@
-import NeueMontrealMediumFont from "./assets/fonts/NeueMontreal-Medium.ttf"
-import NeueMontrealRegularFont from "./assets/fonts/NeueMontreal-Regular.ttf"
-
 import { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
     @font-face {
       font-family: "NeueMontrealRegular";
-      src: url(${NeueMontrealRegularFont});
+      src: url("/fonts/neueRegular.otf");
     }
     @font-face {
       font-family: "NeueMontrealMedium";
-      src: url(${NeueMontrealMediumFont});
+      src: url("/fonts/neueMedium.otf");
+    }
+    @font-face {
+      font-family: "BerlinBold";
+      src: url("/fonts/berlinBold.ttf");
     }
     /* CSS RESET */
     html,
@@ -137,6 +138,9 @@ export default createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
     }
+    a {
+      text-decoration : none;
+    }
     button,
     input,
     optgroup,
@@ -166,11 +170,9 @@ export default createGlobalStyle`
     }
     html,
     body {
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      overflow: hidden;
+      overflow-x: hidden;
       padding: 0;
       margin: 0;
+      background : ${({ theme }) => theme.colors.background};
     }
 `

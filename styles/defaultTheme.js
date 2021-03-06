@@ -4,7 +4,7 @@ const theme = {}
 
 theme.colors = {
   background: "#0D0D0D",
-  textColor: "#FFFFFF",
+  text: "#FFFFFF",
 }
 
 theme.textStyles = {
@@ -27,7 +27,7 @@ theme.textStyles = {
     letter-spacing: 0.0125em;
   `,
   h3: css`
-    font-family: NeueMontrealMedium;
+    font-family: NeueMontrealRegular;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
@@ -54,13 +54,13 @@ theme.textStyles = {
     letter-spacing: 0.01em;
   `,
   h6: css`
-    font-family: NeueMontrealMedium;
+    font-family: NeueMontrealRegular;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 140.62%;
     /* or 28px */
-    letter-spacing: 0.07em;
+    letter-spacing: 0.01em;
   `,
   text: css`
     font-family: NeueMontrealRegular;
@@ -81,7 +81,7 @@ theme.textStyles = {
     letter-spacing: 0.01em;
   `,
   button: css`
-    font-family: NeueMontrealMedium;
+    font-family: NeueMontrealRegular;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
