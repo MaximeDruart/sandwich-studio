@@ -10,12 +10,10 @@ theme.colors = {
 theme.textStyles = {
   h1: css`
     font-family: NeueMontrealRegular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 72px;
+    font-size: 100px;
     line-height: 140.62%;
     /* or 101px */
-    letter-spacing: 0.03em;
+    letter-spacing: 0.01em;
   `,
   h2: css`
     font-family: NeueMontrealRegular;

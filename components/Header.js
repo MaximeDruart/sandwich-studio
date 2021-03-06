@@ -2,8 +2,6 @@ import styled from "styled-components"
 import Link from "next/link"
 import Logo from "../assets/icons/header-logo.svg"
 
-console.log(Logo)
-
 const StyledServices = styled.div`
   * {
     font-family: NeueMontrealRegular;
