@@ -24,7 +24,7 @@ theme.textStyles = {
     font-family: NeueMontrealRegular;
     font-style: normal;
     font-weight: normal;
-    font-size: 56px;
+    font-size: 70px;
     line-height: 140.62%;
     /* identical to box height, or 79px */
     letter-spacing: 0.0125em;
@@ -69,10 +69,10 @@ theme.textStyles = {
     font-family: NeueMontrealRegular;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 140.62%;
     /* identical to box height, or 22px */
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
   `,
   smallText: css`
     font-family: NeueMontrealRegular;

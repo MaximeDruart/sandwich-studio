@@ -17,35 +17,20 @@ const Home = () => {
   useEffect(() => {
     let smooth
     if (mainContainerRef.current)
+      // wierd stuff but we cant import this at the top level as this package can only run client side (needs access to window / document)
       import("smooth-scrolling").then((Smooth) => {
         smooth = new Smooth.default({
-          native: true,
+          native: false,
           section: mainContainerRef.current,
           ease: 0.08,
+          // listener: (e) => console.log(e),
           // noscrollbar: true,
         })
 
         smooth.init()
-        console.log(smooth)
       })
     return () => smooth && smooth.destroy()
   }, [mainContainerRef.current])
-
-  // useLayoutEffect(() => {
-  //   // const Smooth = require("gsap")
-  //   // console.log(Smooth)
-  //   // const a = import("smooth-scrolling").then((b) => {
-  //   //   console.log(b)
-  //   // })
-  //   // console.log(a)
-  //   // console.log(Smooth)
-  //   // const section = mainContainerRef.current
-  //   // const smooth = new Smooth({
-  //   //   native: true,
-  //   //   section: section,
-  //   //   ease: 0.1,
-  //   // })
-  // }, [])
 
   return (
     <>

@@ -85,6 +85,7 @@ const StyledHero = styled.div`
     }
 
     .right {
+      margin-left: 30px;
       text-transform: lowercase;
     }
   }
@@ -129,8 +130,6 @@ const Hero = () => {
       </div>
       <div className='we-are'>
         <span className='left'>We are</span>
-        {/* special blank space character */}
-        <div className='spacer'>‎‏‏‎ ‎</div>
         <span ref={activeWordRef} className='right'></span>
         <span ref={caretRef} className='caret'>
           |
