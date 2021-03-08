@@ -124,7 +124,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <StyledHero>
+    <StyledHero data-scroll-section>
       <div className='top-line'>
         <p>{t("topLine")}</p>
       </div>

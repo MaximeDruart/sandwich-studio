@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import Link from "next/link"
 import Logo from "../assets/icons/header-logo.svg"
+import { motion } from "framer-motion"
+import { useState } from "react"
 
 const StyledServices = styled.div`
   * {
@@ -37,10 +39,29 @@ const StyledServices = styled.div`
     flex-flow: row nowrap;
     width: max(20vw, 250px);
     justify-content: space-between;
+    li {
+      position: relative;
+      overflow: hidden;
+      a {
+        display: block;
+        cursor: pointer;
+        .anim-link {
+          &.bottom-link {
+            position: absolute;
+          }
+        }
+      }
+    }
   }
 `
 
+const variants = {
+  hovering: { y: [0, 0, -30], skew: [0, 25, 0], transition: { ease: "easeOut", duration: 0.25 } },
+}
+
 const Services = () => {
+  const [hovering, setHovering] = useState(false)
+
   return (
     <StyledServices>
       <Link href='/'>
@@ -53,21 +74,18 @@ const Services = () => {
       </Link>
       <div className='right'>
         <ul>
-          <li>
-            <Link href='/about'>
-              <a>About</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/services'>
-              <a>Services</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/projects'>
-              <a>Projects</a>
-            </Link>
-          </li>
+          {["About", "Services", "Projects"].map((link, i) => (
+            <li>
+              <Link href={`/${link.toLowerCase()}`}>
+                <motion.a whileHover='hovering'>
+                  <motion.div variants={variants}>
+                    <div className='anim-link top-link'>{link}</div>
+                    <div className='anim-link bottom-link'>{link}</div>
+                  </motion.div>
+                </motion.a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </StyledServices>

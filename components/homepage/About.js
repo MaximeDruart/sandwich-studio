@@ -1,9 +1,12 @@
+import { useViewportScroll, motion } from "framer-motion"
+import { useEffect } from "react"
 import styled from "styled-components"
+import { useTranslation } from "next-i18next"
 
 const StyledAbout = styled.div`
   border: 1px solid yellow;
   width: 100vw;
-  overflow: hidden;
+  /* overflow: hidden; */
 
   padding: 5vh max(5vw, 50px) 0 max(5vw, 50px);
 
@@ -45,18 +48,10 @@ const StyledAbout = styled.div`
       width: max(40%, 400px);
       text-align: right;
       .title {
-        /* white-space: nowrap; */
         ${({ theme }) => theme.textStyles.h2};
       }
       .desc {
         ${({ theme }) => theme.textStyles.text};
-      }
-    }
-    &.who-we-are {
-      flex-direction: row-reverse;
-
-      .text {
-        text-align: left;
       }
     }
 
@@ -65,33 +60,62 @@ const StyledAbout = styled.div`
         padding-top: 30vh;
       }
     }
+
+    &.who-we-are {
+      flex-direction: row-reverse;
+      margin-top: 25vh;
+      margin-bottom: 55vh;
+
+      .photos {
+        .photo-bm {
+          position: absolute;
+          width: max(30vw, 400px);
+          height: max(30vw, 400px);
+          background: center / cover url("/images/mission-3.jpg");
+          bottom: -60vh;
+          left: -20vw;
+        }
+        .photo-bl {
+          position: absolute;
+          width: max(30vw, 400px);
+          height: max(30vw, 400px);
+          background: center / cover url("/images/mission.jpg");
+          bottom: -40vh;
+          left: -60vw;
+        }
+      }
+      .text {
+        text-align: left;
+      }
+    }
   }
 `
 
 const About = () => {
+  const { t } = useTranslation("common")
+
   return (
-    <StyledAbout>
-      <div className='headline'>What we stand for</div>
+    <StyledAbout data-scroll-section>
+      <div data-scroll data-scroll-direction='horizontal' data-scroll-speed='9' className='headline'>
+        {t("about-headline")}
+      </div>
       <div className='our-mission about-section'>
-        <div className='photos'>
-          <div className='photo'></div>
+        <div data-scroll data-scroll-speed='2' className='photos'>
+          <div data-scroll data-scroll-speed='4' className='photo'></div>
         </div>
         <div className='text'>
-          <div className='title'>Our mission</div>
-          <div className='desc'>
-            Our speakers are experienced marketers willing to share and let you in on their little secrets that lead to
-            big successes. We prepared an amazing line-up of digital marketers & brand experts from various industries.
-          </div>
+          <div className='title'>{t("about-1-title")}</div>
+          <div className='desc'>{t("about-1-body")}</div>
         </div>
       </div>
       <div className='who-we-are about-section'>
-        <div className='photos'></div>
+        <div data-scroll data-scroll-speed='2' className='photos'>
+          <div data-scroll data-scroll-speed='1' className='photo photo-bl'></div>
+          <div data-scroll data-scroll-speed='1.5' className='photo photo-bm'></div>
+        </div>
         <div className='text'>
-          <div className='title'>Who we are</div>
-          <div className='desc'>
-            Our speakers are experienced marketers willing to share and let you in on their little secrets that lead to
-            big successes. We prepared an amazing line-up of digital marketers & brand experts from various industries.
-          </div>
+          <div className='title'>{t("about-2-title")}</div>
+          <div className='desc'>{t("about-2-body")}</div>
         </div>
       </div>
     </StyledAbout>
