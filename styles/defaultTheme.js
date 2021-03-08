@@ -25,7 +25,7 @@ theme.textStyles = {
     font-style: normal;
     font-weight: normal;
     font-size: 70px;
-    line-height: 140.62%;
+    line-height: 110%;
     /* identical to box height, or 79px */
     letter-spacing: 0.0125em;
   `,
